@@ -18,7 +18,8 @@
     "md5": "^2.3.0",
     "morgan": "^1.10.0",
     "mysql2": "^2.3.3",
-    "sequelize": "^6.19.0"
+    "sequelize": "^6.19.0",
+    "unique-slug": "^2.0.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"

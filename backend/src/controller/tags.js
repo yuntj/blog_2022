@@ -34,6 +34,7 @@ module.exports.getTags = async(req,res,next) =>{
 //创建标签
 module.exports.createTag = async (req, res, next) => {
     try {
+        
         const tag= req.body.tag
         console.log(tag);
         //标签验证 同util=>user
