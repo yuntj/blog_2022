@@ -49,11 +49,8 @@ module.exports.createTag = async (req, res, next) => {
                 message:'创建标签成功',
                 data: tagResult.dataValues.name
             })
-
-
     }
     catch (error) {
         next(error)
     }
 };
-

@@ -5,12 +5,12 @@ const { authMiddleware } = require('../middleware/admin/auth.middleware')
 
 const ArticleController = require('../controller/articles')
 
-router.post('/', authMiddleware, ArticleController.createArticle)
-router.get('/:slug', authMiddleware, ArticleController.getArticle)
-router.get('/', authMiddleware, ArticleController.getArticles)
-router.get('/follow', authMiddleware, ArticleController.getFollowArticle)
-router.put('/', authMiddleware, ArticleController.updateArticle)
-router.delete('/', authMiddleware, ArticleController.deleteArticle)
+router.post('/', authMiddleware, ArticleController.createArticle)//创建文章
+router.get('/', authMiddleware, ArticleController.getArticles)//条件获取全局文章
+router.get('/follow', authMiddleware, ArticleController.getFollowArticle)//获取关注文章
+router.get('/:slug', authMiddleware, ArticleController.getArticle)//获取单个文章
+router.put('/:slug', authMiddleware, ArticleController.updateArticle)//更新文章
+router.delete('/:slug', authMiddleware, ArticleController.deleteArticle)//删除文章
 
 
 
