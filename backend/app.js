@@ -12,9 +12,13 @@ const errorMiddleware = require('./src/middleware/error.middleware')
 const express = require('express')
 const app = express()
 
+//中间件
 app.use(cors({ credentials: true, origin: true }))//跨域
 app.use(express.json())//解析
 app.use(morgan('tiny'))//http请求日志
+
+//静态服务
+app.use('/static',express.static('public'))
 
 //路由初始化
 initRoute(app)
