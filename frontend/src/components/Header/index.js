@@ -1,11 +1,24 @@
-import { Component } from 'react'
+import { PureComponent } from 'react'
+import {Link} from 'react-router-dom'
+import HeaderMenu from './menu'
 
-class Header extends Component {
+class Header extends PureComponent {
     render() {
+        const {appName,currentUser} = this.props
+        console.log(appName,currentUser)
         return(
-            <div>
-                Header
-            </div>
+            <nav className='navbar navbar-light'>
+                <div className='container'>
+                    {/* 左边 */}
+                    <Link to = "/" className="navbar-brand">
+                        {appName}
+                    </Link>
+                    {/* 右边 */}
+                    <HeaderMenu currentUser={currentUser}/>
+
+                </div>
+
+            </nav>
         )
     }
 }
