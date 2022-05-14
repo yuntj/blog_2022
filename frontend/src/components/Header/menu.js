@@ -19,7 +19,7 @@ const HeaderMenu = memo(
                 <li className='nav-item'>
                     {/* <Link to={`/@&{currentUser.username}`}  */}
                     <Link to='/profile' className='nav-link'>
-                        <img src={currentUser.avatar || 'http://localhost:8000/static/avatar_default.jpg'} className="d-inline-block align-top" width="20" height="20" />
+                        <img src={currentUser.avatar || '//yuntj.github.io/static/avatar_default.jpg'} className="d-inline-block align-top" width="20" height="20" />
                         {currentUser.username}
                     </Link>
                 </li>

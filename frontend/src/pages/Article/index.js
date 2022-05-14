@@ -4,7 +4,7 @@ class Article extends PureComponent {
     render() {
         return (
             <div>
-                Article
+                内容
             </div>
         )
     }

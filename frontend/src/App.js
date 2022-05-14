@@ -13,7 +13,7 @@ const Profile = lazy(() => import('./pages/Profile'))
 const appName = 'blog'
 const currentUser = {
   username: 'test1',
-  avatar: 'http://localhost:8000/static/avatar_default.jpg',
+  avatar: '//yuntj.github.io/static/avatar_default.jpg',
   bio: 'user info'
 }
 
