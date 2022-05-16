@@ -13,14 +13,14 @@ const mock_data={
                 "body": "htm777777dy426",
                 "createdAt": "2022-04-30T09:01:49.000Z",
                 "updatedAt": "2022-04-30T09:01:49.000Z",
-                "userEmail": "zhangsan@qq.com",
+                "userEmail": "test1@qq.com",
                 "tags": [
                     "html",
                     "js"
                 ],
                 "author": {
-                    "username": "zhangsan",
-                    "email": "zhangsan@qq.com",
+                    "username": "test1",
+                    "email": "test1@qq.com",
                     "bio": null,
                     "avatar": null
                 },
@@ -304,7 +304,7 @@ const Main = memo((props)=>{
             <div>
                 <div className="btn-group" role="group" aria-label="Basic example">
                     <YourTab tab='yours' />
-                    <GlobalTab  />
+                    <GlobalTab tab='all'  />
                     <TagTab tag='html'/>
                 </div>
             </div>

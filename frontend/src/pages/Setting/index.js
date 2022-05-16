@@ -1,12 +1,19 @@
 import { PureComponent } from 'react'
 import Errors from '../../components/Errors'
-import {memo} from 'react'
+// import {memo} from 'react'
 
 // const errors = {
 //     "error1": "error1 content",
 //     "error2": "error2 content"
 // }
 const errors = null
+
+const currentUser = {
+    username: 'test1',
+    avatar: '//yuntj.github.io/static/avatar_default.jpg',
+    bio: 'user info',
+    email:'test1@qq.com'
+}
 
 class SettingForm extends PureComponent {
     // state
@@ -82,8 +89,8 @@ class SettingForm extends PureComponent {
     }
 }
 
-const Setting = memo((props) => {
-    const { currentUser } = props
+class Setting extends PureComponent {
+    render(){
     return (
         <div className='settings-page'>
             <div className='container page'>
@@ -108,8 +115,8 @@ const Setting = memo((props) => {
                 </div>
             </div>
         </div>
-    )
-})
+    )}
+}
 
 
 export default Setting;

@@ -7,6 +7,9 @@ import Errors from '../../components/Errors'
 //     "error2": "error2 content"
 // }
 const errors=null
+//                         request - api - server - route - controller - model - database
+// ui - form data - button - 三方请求 - token - user - 同步store()/localStorage
+//                         重定向
 
 class Regist extends PureComponent {
     render() {

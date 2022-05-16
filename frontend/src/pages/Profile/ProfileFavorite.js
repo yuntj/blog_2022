@@ -1,7 +1,7 @@
-import {memo} from 'react'
+
 import { Link } from 'react-router-dom'
-import { PureComponent } from 'react'
-import ArticlesList from '../ArticlesList/index'
+import Profile from '.'
+
 
 const mock = {
     profile: {
@@ -276,36 +276,14 @@ const mock = {
     }
 }
 
-const ButtonInfo = memo((props) => {
-    const { isCurrentUser, profile } = props
-    if (isCurrentUser) {
-        return (
-            <Link
-                to='/setting'
-                className="btn btn-sm btn-outline-secondary action-btn">
-                <i className="fa fa-cog"></i>编辑设置
-            </Link>
-        )
-    } else {
-
-        return (
-            <button className={profile.following ? 'btn-secondary' : 'btn-outline-secondary'}>
-                <i className="fa fa-user-plus"></i> {' '}
-                {profile.following ? '取消关注' : '关注作者'}
-            </button>
-
-        )
-    }
-})
-
-class Profile extends PureComponent {
+class ProfileFavorite extends Profile {
 
     renderTag = () => {
         return (
             <ul className="nav nav-pills outline-active">
                 <li className='nav-item'>
                     <Link
-                        className="nav-link active"
+                        className="nav-link"
                         to={`/${mock.currentUser.username}/profile`}
                     >
                         我的文章
@@ -313,7 +291,7 @@ class Profile extends PureComponent {
                 </li>
                 <li className='nav-item'>
                     <Link
-                        className="nav-link"
+                        className="nav-link active"
                         to={`/${mock.currentUser.username}/favorites`}
                     >
                         喜欢文章
@@ -323,64 +301,10 @@ class Profile extends PureComponent {
         )
     }
 
-    render() {
-        // const {profile,currentUser} = this.props
-        const { profile, currentUser, article } = mock
-
-        // 根据用户名称=>用户信息 profile  =>跟当前登录用户走比较   用户名称是否相同=>区分按钮信息
-        const isCurrentUser = currentUser && profile.username === currentUser.username
-
-        return (
-            <div className='profile-page'>
-                {/* 用户信息 */}
-                <div className='user-info'>
-                    <div className='container'>
-                        <div className='row'>
-                            <div className='col-xs-12 col-md-10 offset-md-1'>
-                                {/*基本信息  */}
-                                <img src={profile.avatar || ''} className='user-img' alt={profile.avatar} />
-                                <h4>{profile.username}</h4>
-                                <p>{profile.bio}</p>
-
-                                {/* 按钮信息 */}
-                                <ButtonInfo isCurrentUser={isCurrentUser} profile={profile} />
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                {/* 文章信息 */}
-                <div className='container'>
-                    <div className="row">
-                        <div className="col-xs-12 col-md-10 offset-md-1">
-                            {/* 选项卡 */}
-                            <div className='aticles-toggle'>
-                                {
-                                    this.renderTag()
-                                }
-                            </div>
-
-                            {/* 文章列表 */}
-                            <ArticlesList
-                                articles={article.articles}
-                                articlesCount={article.articlesCount}
-                                currentPage={1}
-                            />
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-        )
-    }
-
     componentDidMount() {
         // 作者信息profile
-        // 作者自己文章
+        // 作者喜欢的文章
     }
 }
 
-export default Profile
+export default ProfileFavorite

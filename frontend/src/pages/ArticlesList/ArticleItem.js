@@ -7,10 +7,12 @@ const ArticleItem = ({article})=>{
     return(
         <div>
             <div>
+                {/* 头像 */}
                 <Link to={`/${username}`}>
                     <img src={avatar || '//yuntj.github.io/static/avatar_default.jpg'} alt={username}/>
                 </Link>
-                <Link to={`/${username}`}>
+                {/* 作者名称 文章创建时间 */}
+                <Link to={`/${username}/profile`}>
                     {username}
                 </Link>
                 <span>

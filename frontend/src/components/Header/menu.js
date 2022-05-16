@@ -11,14 +11,13 @@ const HeaderMenu = memo(
                     <Link to='/' className='nav-link'>主页</Link>
                 </li>
                 <li className='nav-item'>
-                    <Link to='/article' className='nav-link'>创建文章</Link>
+                    <Link to='/article/new' className='nav-link'>创建文章</Link>
                 </li>
                 <li className='nav-item'>
                     <Link to='/setting' className='nav-link'>设置</Link>
                 </li>
                 <li className='nav-item'>
-                    {/* <Link to={`/@&{currentUser.username}`}  */}
-                    <Link to='/profile' className='nav-link'>
+                    <Link to={`/${currentUser.username}/profile`} className='nav-link'>
                         <img src={currentUser.avatar || '//yuntj.github.io/static/avatar_default.jpg'} className="d-inline-block align-top" width="20" height="20" />
                         {currentUser.username}
                     </Link>

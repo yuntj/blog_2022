@@ -13,7 +13,11 @@ class Home extends Component {
                    <Main/>
                </div>
                <div className='col-3'>
-                   <Tags tags={['html','css','js']}/>
+                   <div className='sidebar'>
+                       <p>热门标签</p>
+                       <Tags tags={['html','css','js']}/>
+                   </div>
+                   
                </div>
                </div>
            </div>

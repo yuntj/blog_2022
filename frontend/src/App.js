@@ -9,13 +9,18 @@ const Login = lazy(() => import('./pages/Login'))
 const Regist = lazy(() => import('./pages/Regist'))
 const Setting = lazy(() => import('./pages/Setting'))
 const Article = lazy(() => import('./pages/Article'))
+const ArticleNew = lazy(() => import('./pages/ArticleNew'))
 const Profile = lazy(() => import('./pages/Profile'))
+const ProfileFavorite = lazy(() => import('./pages/Profile/ProfileFavorite'))
 const appName = 'blog'
+
 const currentUser = {
   username: 'test1',
   avatar: '//yuntj.github.io/static/avatar_default.jpg',
   bio: 'user info'
 }
+
+// const currentUser= null
 
 
 class App extends PureComponent {
@@ -34,8 +39,10 @@ class App extends PureComponent {
             <Route path='/login' component={Login} />
             <Route path='/regist' component={Regist} />
             <Route path='/setting' component={Setting} />
-            <Route path='/article' component={Article} />
-            <Route path='/profile' component={Profile} />
+            <Route path='/article/new' component={ArticleNew} />
+            <Route path='/article/:slug' component={Article} />
+            <Route path='/:username/profile' component={Profile} />
+            <Route path='/:username/favorites' component={ProfileFavorite} />
           </Switch>
         </Suspense>
       </div>
